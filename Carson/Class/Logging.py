@@ -35,6 +35,9 @@ class _CLoggingBase:
             self._stream_handler.setFormatter(logging_format)
             self._log.addHandler(self.stream_handler)
 
+    def __repr__(self):
+        return self.log_path
+
     @property
     def log_name(self): return self._log_name
 
@@ -55,8 +58,8 @@ class _CLoggingBase:
 class CLogging(_CLoggingBase):
     """
         * CLogging("log_name", "C:dir/xxx.log", level=0, mode='w', logging_format=logging.Formatter(u'%(message)s'), stream_handler_on=True, stream_level=logging.ERROR)
-        * CLogging("log_name", "C:dir/xxx.log", logging.INFO, 'w', logging.Formatter(u'%(message)s'), True, logging.ERROR)  # stream level > file level: console的資料只會有層級嚴重的，而file會都寫入。 所以寫的資料要注意都是要寫近檔案去的，至於如果有額外要寫到console去的可以使用"show_msg_only_console"
-        * CLogging("log_name", "C:dir/xxx.log", logging.INFO, 'w', logging.Formatter(u'%(message)s'), True, logging.DEBUG)  # stream level < file level: 此模式可以確保寫入的檔案是我們要的資料，但缺點是console只要是包含debug以上的層級都會記錄
+        * CLogging("log_name", "C:dir/xxx.log", logging.INFO, 'w', logging.Formatter(u'%(message)s'), True, logging.ERROR)
+        * CLogging("log_name", "C:dir/xxx.log", logging.INFO, 'w', logging.Formatter(u'%(message)s'), True, logging.DEBUG)
         * CLogging("log_name", "temp_dir/xxx.log")
 
         logging_format::

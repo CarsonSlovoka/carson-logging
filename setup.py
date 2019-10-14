@@ -9,7 +9,7 @@ with open('README.rst', encoding='utf-8') as f:
 
 setup(
     name='carson-logging',
-    version='0.0.6',  # x.x.x.{dev, a, b, rc}
+    version='0.1.0',  # x.x.x.{dev, a, b, rc}
     packages=['Carson', r'Carson\Class'],  # to see the detail, please open MANIFEST.in
     license="Apache-2.0",
 
@@ -33,7 +33,7 @@ setup(
     long_description_content_type='text/x-rst',  # text/markdown  # https://packaging.python.org/guides/making-a-pypi-friendly-readme/
     keywords=['logging', 'log'],
 
-    download_url='https://github.com/CarsonSlovoka/carson-logging/tarball/v0.0.5',
+    download_url='https://github.com/CarsonSlovoka/carson-logging/tarball/v0.1.0',
     python_requires='>=3.6.2, <4',
 
     zip_safe=False,
